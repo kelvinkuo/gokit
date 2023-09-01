@@ -12,8 +12,6 @@ type Trie interface {
     Contains(word string) bool
     // SearchByPrefix finds and returns words by prefix.
     SearchByPrefix(prefix string) []string
-    // // Match returns the words which both in trie and the sentence
-    // Match(sentence string) []string
     // Size returns the number of keys in the tree.
     Size() int
 }
@@ -112,11 +110,6 @@ func (t *runeTrie) SearchByPrefix(prefix string) []string {
     
     return search(node, r, []rune(trimLastChar(prefix)))
 }
-
-// // Match returns the words which both in trie and the sentence
-// func (t *runeTrie) Match(sentence string) []string {
-//
-// }
 
 // Size returns the size of distinct words in the trie tree.
 func (t *runeTrie) Size() int {
